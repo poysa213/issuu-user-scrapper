@@ -1,4 +1,4 @@
 selenium
 requests
 tqdm    
-webdriver_manager tqdm  selenium
+webdriver_manager
