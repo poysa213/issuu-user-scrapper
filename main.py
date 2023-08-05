@@ -76,7 +76,9 @@ def download_issuu_pdfs(links, save_folder):
     print()
     print("Start downloading pdfs")
 
-    pool = multiprocessing.Pool(processes=20)
+    max_processes = 20
+    num_processes = min(multiprocessing.cpu_count(), max_processes)
+    pool = multiprocessing.Pool(processes=num_processes)
 
     with tqdm(total=len(links), desc="Downloading PDFs") as pbar:
         results = []
